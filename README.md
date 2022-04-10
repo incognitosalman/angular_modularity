@@ -55,6 +55,8 @@ Add these components in the declaration section of shared module and MatSidenavM
 
 Since, shared module will be used in any other module of  the application. So, we will export the components (Dashboard, Toolbar, and Sidenav) from shared.module.ts by adding these to exports parameter of NgModule decorator.
 
+Finally, we need to add the Router module in imports array of the shared.module.ts.
+
 When we run our application using 
 
 ```
@@ -66,5 +68,53 @@ ng serve
 
 
 ### Step 2: Create Bank Manager Module
+
+Now we will generate a new module for bank manager with its routing module.
+
+```
+ng g m bank-manager --routing
+```
+
+Move the components from root to bank-manager module
+- Create account
+- Manage account
+
+Remove the imports from the app.module.ts file and add to declarations array of bank-manager module.
+
+```typescript
+declarations: [
+    CreateAccountComponent,
+    ManageAccountsComponent
+  ],
+```
+
+Export these components from the bank-manager module.
+
+```typescript
+exports: [
+    CreateAccountComponent,
+    ManageAccountsComponent,
+  ]
+```
+
+Add the routing for the bank-manager.routing.module.ts file
+
+```typescript
+const routes: Routes = [
+  { path: 'bank-manager', component: DashboardComponent },
+  { path: 'create-account', component: CreateAccountComponent },
+  { path: 'manage-accounts', component: ManageAccountsComponent },
+];
+```
+
+In order to load the bank-manager module we update the app-routing.module.ts
+
+```typescript
+{
+    path: 'bank-manager',
+    loadChildren: () => import('src/app/bank-manager/bank-manager.module').then((m) => m.BankManagerModule),
+  }
+```
+
 
 ### Step 3: Create Account Holder Module
