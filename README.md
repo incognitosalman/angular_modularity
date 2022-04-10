@@ -53,9 +53,30 @@ There we also need to update all the related paths in the application for these 
 
 Add these components in the declaration section of shared module and MatSidenavModule to imports array of the shared.module.ts.
 
+Finally, we need to add the Router module in imports array of the shared.module.ts.
+
+```typescript
+ declarations: [
+    SidenavComponent,
+    ToolbarComponent,
+    DashboardComponent
+  ],
+  imports: [
+    CommonModule,
+    MatSidenavModule,
+    RouterModule
+  ]
+```
+
 Since, shared module will be used in any other module of  the application. So, we will export the components (Dashboard, Toolbar, and Sidenav) from shared.module.ts by adding these to exports parameter of NgModule decorator.
 
-Finally, we need to add the Router module in imports array of the shared.module.ts.
+```typescript
+exports: [
+    ToolbarComponent,
+    SidenavComponent,
+    MatSidenavModule,
+  ]
+```
 
 When we run our application using 
 
@@ -64,7 +85,6 @@ ng serve
 ```
 
 ![image](https://user-images.githubusercontent.com/100778209/162630287-f3ed67ab-c9ab-4a4b-ade1-1fb44bb211da.png)
-
 
 
 ### Step 2: Create Bank Manager Module
