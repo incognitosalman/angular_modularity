@@ -1,16 +1,16 @@
 # Introducing Modularity in Angular Application
 
-## What is Modularity in Angular?
+## What is an Angular Module?
 
-[Angular Material](https://material.angular.io/guide/getting-started) is a UI component library for Angular  developers. Angular Material helps to construct attractive, consistent, and functional web pages. It is used to create a responsive and faster website.
+In [Angular](https://angular.io/), a module is a mechanism to group different components, directives, pipes and services etc. that are inter-related, in such a way that can be combined with other modules to create an application. 
 
 ## About this exercise
 
 Previously we scafolded a new Angular application in which we have integrated 
 
 * Scaffolded the angular application
-* FontAwesome Library for icons
-* Bootstrap Library for styling buttons
+* [FontAwesome](https://fontawesome.com/) Library for icons
+* [Bootstrap](https://getbootstrap.com/) Library for styling buttons
 * Bootstrap NavBar component
 * Routing for multiple components e.g. (CreateAccountComponent, ManageAccountsComponent, DepositFundsComponent, TransferFundsComponent) for which we have already configured routing. Also we have commented code of links in app.component.html as below :
 ```html
