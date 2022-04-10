@@ -15,7 +15,7 @@ Previously we scafolded a new Angular application in which we have integrated
 * Routing for multiple components e.g. (CreateAccountComponent, ManageAccountsComponent, DepositFundsComponent, TransferFundsComponent) for which we have already configured routing. Also we have commented code of links in app.component.html as below :
 
 ```html
-<!-- <ul>
+<ul>
   <li><a><i class="fas fa-chart-line"></i> Dashboard</a></li>
   <div>
     <li><a [routerLink]="['/transfer-funds']"><i class="fas fa-random"></i> Transfer Funds</a></li>
@@ -23,7 +23,7 @@ Previously we scafolded a new Angular application in which we have integrated
     <li><a [routerLink]="['/create-account']"><i class="fas fa-user"></i> Create New Account</a></li>
     <li><a [routerLink]="['/manage-accounts']"><i class="fas fa-users"></i> Manage Accounts</a></li>
   </div>
-</ul> -->
+</ul>
 ```
 * SideNav having links which are navigating to these pages
 
