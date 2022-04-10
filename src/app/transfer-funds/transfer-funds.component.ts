@@ -8,16 +8,9 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./transfer-funds.component.css']
 })
 export class TransferFundsComponent implements OnInit {
-  fromAccountId: string | undefined;
-  toAccountId: string | undefined;
-  sub: Subscription | undefined;
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.sub = this.route.params.subscribe(params => {
-      this.fromAccountId = params['fromAccountId']; 
-      this.toAccountId = params['toAccountId']; 
-   });
   }
 
 }
