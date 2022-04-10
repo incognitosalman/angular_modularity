@@ -126,10 +126,71 @@ In order to load the bank-manager module we update the app-routing.module.ts
 
 ```typescript
 {
-    path: 'bank-manager',
-    loadChildren: () => import('src/app/bank-manager/bank-manager.module').then((m) => m.BankManagerModule),
-  }
+  path: 'bank-manager',
+  loadChildren: () => import('src/app/bank-manager/bank-manager.module').then((m) => m.BankManagerModule),
+}
 ```
 
-
 ### Step 3: Create Account Holder Module
+
+Now we will generate a new module for account holder with its routing module.
+
+```
+ng g m account-holder --routing
+```
+
+Move the components from root to bank-manager module
+- Deposit funds
+- Transfer funds
+
+Remove the imports from the app.module.ts file and add to declarations array of account-holder module.
+
+```typescript
+declarations: [
+    DepositFundsComponent,
+    TransferFundsComponent,
+  ],
+```
+
+Export these components from the account-holder module.
+
+```typescript
+exports: [
+    DepositFundsComponent,
+    TransferFundsComponent,
+  ]
+```
+
+Update the sidenav component for bank-manager pages
+
+```html
+<li>
+  <a [routerLink]="['account-holder/transfer-funds']"
+    ><i class="fas fa-random"></i> Transfer Funds</a
+  >
+</li>
+<li>
+  <a [routerLink]="['account-holder/deposit-funds']"
+    ><i class="fas fa-money-check-alt"></i>Deposit Funds</a
+  >
+</li>
+```
+
+Add the routing for the account-holder.routing.module.ts file
+
+```typescript
+const routes: Routes = [
+  { path: 'account-holder', component: DashboardComponent },
+  { path: 'deposit-funds', component: DepositFundsComponent },
+  { path: 'transfer-funds', component: TransferFundsComponent },
+];
+```
+
+In order to load the account-holder module we update the app-routing.module.ts
+
+```typescript
+{
+  path: 'account-holder',
+  loadChildren: () => import('src/app/account-holder/account-holder.module').then((m) => m.AccountHolderModule),
+}
+```
