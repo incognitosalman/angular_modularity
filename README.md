@@ -1,23 +1,17 @@
-# Adding Angular Material's Side Nav for Routing
+# Introducing Modularity in Angular Application
 
-## What is Angular Material
+## What is Modularity in Angular?
 
 [Angular Material](https://material.angular.io/guide/getting-started) is a UI component library for Angular  developers. Angular Material helps to construct attractive, consistent, and functional web pages. It is used to create a responsive and faster website.
-
-
-## What is Angular Material Side Nav
-
-Angular Material provides two sets of components designed to add collapsible side content (often navigation, though it can be any content) alongside some primary content. These are the sidenav and drawer components.
-
-The sidenav components are designed to add side content to a fullscreen app. 
-For more details click link https://material.angular.io/components/sidenav/overview 
 
 ## About this exercise
 
 Previously we scafolded a new Angular application in which we have integrated 
 
+* Scaffolded the angular application
 * FontAwesome Library for icons
 * Bootstrap Library for styling buttons
+* Bootstrap NavBar component
 * Routing for multiple components e.g. (CreateAccountComponent, ManageAccountsComponent, DepositFundsComponent, TransferFundsComponent) for which we have already configured routing. Also we have commented code of links in app.component.html as below :
 ```html
 <!-- <ul>
@@ -30,17 +24,21 @@ Previously we scafolded a new Angular application in which we have integrated
   </div>
 </ul> -->
 ```
-* Bootstrap's Navbar which is responsive and mobile friendly
+* SideNav having links which are navigating to these pages
+
+In this exercise we are going to split our application into three modules
+
+* Shared module in which we have components which are common to all application (toolbar, sidenav, and dashboard)
+* Bank manager module (create account and manage accounts)
+* Account holder module (transfer funds and deposit funds) 
+* We will implement the lazy loading of these modules in our application
 
 
-In this exercise we will
+### Step 1: Create Shared Module
 
-* Integrate Angular Material 
-* Integrate Angular Side Nav which will have links to navigate to our components
-* Integrate Toggling of Side Nav using Toolbar 
+### Step 2: Create Bank Manager Module
 
-
-<font size="5" color="grey">**Step 1: Adding Angular Material support**</font> 
+### Step 3: Create Account Holder Module
 
 Use the `Angular CLI's` installation schematic to set up your Angular Material project by running the following command:
 
