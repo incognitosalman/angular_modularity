@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateAccountComponent } from './create-account/create-account.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DepositFundsComponent } from './deposit-funds/deposit-funds.component';
-import { ManageAccountsComponent } from './manage-accounts/manage-accounts.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { TransferFundsComponent } from './transfer-funds/transfer-funds.component';
+import { DashboardComponent } from './shared/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'create-account', component: CreateAccountComponent },
-  { path: 'manage-accounts', component: ManageAccountsComponent },
-  { path: 'deposit-funds', component: DepositFundsComponent },
-  { path: 'transfer-funds', component: TransferFundsComponent },
+  {
+    path: 'account-holder',
+    loadChildren: () => import('src/app/account-holder/account-holder.module').then((m) => m.AccountHolderModule),
+  },
+  {
+    path: 'bank-manager',
+    loadChildren: () => import('src/app/bank-manager/bank-manager.module').then((m) => m.BankManagerModule),
+  },
   { path: '**', component: PageNotFoundComponent },
 ];
 
