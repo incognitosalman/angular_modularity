@@ -36,6 +36,34 @@ In this exercise we are going to split our application into three modules
 
 
 ### Step 1: Create Shared Module
+Create a new module name **Shared** which will generate a new file shared.module.ts in shared folder.
+
+```
+ng g m shared
+```
+
+Now we will move our three common components inside the shared folder
+- Dashboard
+- ToolBar
+- SideNav
+
+We will remove one module for the SideNav which is **MatSidenavModule** from app.module.ts.
+
+There we also need to update all the related paths in the application for these components and remove the imports from the app.module.ts file.
+
+Add these components in the declaration section of shared module and MatSidenavModule to imports array of the shared.module.ts.
+
+Since, shared module will be used in any other module of  the application. So, we will export the components (Dashboard, Toolbar, and Sidenav) from shared.module.ts by adding these to exports parameter of NgModule decorator.
+
+When we run our application using 
+
+```
+ng serve
+```
+
+![image](https://user-images.githubusercontent.com/100778209/162630287-f3ed67ab-c9ab-4a4b-ade1-1fb44bb211da.png)
+
+
 
 ### Step 2: Create Bank Manager Module
 
