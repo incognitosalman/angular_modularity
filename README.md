@@ -97,6 +97,21 @@ exports: [
   ]
 ```
 
+Update the sidenav component for bank-manager pages
+
+```html
+<li>
+  <a [routerLink]="['bank-manager/create-account']"
+    ><i class="fas fa-user"></i> Create New Account</a
+  >
+</li>
+<li>
+  <a [routerLink]="['bank-manager/manage-accounts']"
+    ><i class="fas fa-users"></i> Manage Accounts</a
+  >
+</li>
+```
+
 Add the routing for the bank-manager.routing.module.ts file
 
 ```typescript
